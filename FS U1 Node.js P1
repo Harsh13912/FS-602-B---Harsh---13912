@@ -1,0 +1,83 @@
+// app.js
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+let tasks = [];
+
+function showMenu() {
+  console.log(`
+==============================
+   Task Manager CLI (Node.js)
+==============================
+1. Add Task
+2. View Tasks
+3. Delete Task
+4. Exit
+  `);
+
+  rl.question("Enter your choice: ", (choice) => {
+    switch (choice.trim()) {
+      case "1":
+        addTask();
+        break;
+      case "2":
+        viewTasks();
+        break;
+      case "3":
+        deleteTask();
+        break;
+      case "4":
+        console.log("Goodbye!");
+        rl.close();
+        break;
+      default:
+        console.log("❌ Invalid choice. Try again.");
+        showMenu();
+    }
+  });
+}
+
+function addTask() {
+  rl.question("Enter task: ", (task) => {
+    tasks.push(task);
+    console.log(`✅ Task "${task}" added!`);
+    showMenu();
+  });
+}
+
+function viewTasks() {
+  console.log("\n📋 Your Tasks:");
+  if (tasks.length === 0) {
+    console.log("   (No tasks found)");
+  } else {
+    tasks.forEach((t, i) => {
+      console.log(`   ${i + 1}. ${t}`);
+    });
+  }
+  showMenu();
+}
+
+function deleteTask() {
+  if (tasks.length === 0) {
+    console.log("⚠️ No tasks to delete.");
+    return showMenu();
+  }
+
+  rl.question("Enter task number to delete: ", (num) => {
+    const index = parseInt(num) - 1;
+    if (index >= 0 && index < tasks.length) {
+      const removed = tasks.splice(index, 1);
+      console.log(`🗑️ Task "${removed}" deleted!`);
+    } else {
+      console.log("❌ Invalid task number.");
+    }
+    showMenu();
+  });
+}
+
+// Start the app
+showMenu();
