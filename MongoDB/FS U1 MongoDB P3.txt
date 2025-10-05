@@ -1,0 +1,50 @@
+// Switch to the database (create if not exists)
+use nimbusEcommerce
+
+// Insert sample product documents with nested variants
+db.products.insertMany([
+  {
+    name: "Classic T-Shirt",
+    price: 20,
+    category: "Apparel",
+    variants: [
+      { color: "red", size: "M", stock: 10 },
+      { color: "blue", size: "L", stock: 15 }
+    ]
+  },
+  {
+    name: "Running Shoes",
+    price: 75,
+    category: "Footwear",
+    variants: [
+      { color: "black", size: "9", stock: 5 },
+      { color: "white", size: "10", stock: 8 }
+    ]
+  },
+  {
+    name: "Coffee Mug",
+    price: 12,
+    category: "Home & Kitchen",
+    variants: [
+      { color: "white", size: "300ml", stock: 20 },
+      { color: "black", size: "400ml", stock: 10 }
+    ]
+  }
+]);
+
+// Query 1: Retrieve all products
+db.products.find()
+
+// Query 2: Filter products by category "Apparel"
+db.products.find({ category: "Apparel" })
+
+// Query 3: Project product name and variants' color and stock only
+db.products.find(
+  {},
+  {
+    name: 1,
+    "variants.color": 1,
+    "variants.stock": 1,
+    _id: 0
+  }
+)
