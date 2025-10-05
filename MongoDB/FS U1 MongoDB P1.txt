@@ -1,0 +1,24 @@
+// Use (or create) the database
+use productDB;
+
+// CREATE: Insert multiple products
+db.products.insertMany([
+  { name: "Laptop", price: 1200, category: "Electronics" },
+  { name: "Coffee Mug", price: 15, category: "Home & Kitchen" },
+  { name: "Running Shoes", price: 85, category: "Footwear" }
+]);
+
+// READ: Find all products
+db.products.find().pretty();
+
+// READ: Find a product by _id (replace with actual ObjectId)
+db.products.find({ _id: ObjectId("REPLACE_WITH_PRODUCT_ID") }).pretty();
+
+// UPDATE: Update product by _id (replace ObjectId and change fields as needed)
+db.products.updateOne(
+  { _id: ObjectId("REPLACE_WITH_PRODUCT_ID") },
+  { $set: { price: 1300, category: "Computers" } }
+);
+
+// DELETE: Delete a product by _id (replace ObjectId)
+db.products.deleteOne({ _id: ObjectId("REPLACE_WITH_PRODUCT_ID") });
