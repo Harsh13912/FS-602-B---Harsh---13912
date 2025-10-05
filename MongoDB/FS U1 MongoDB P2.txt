@@ -1,0 +1,24 @@
+// Use (or create) the database
+use studentDB;
+
+// Create the collection and insert some sample student documents
+db.students.insertMany([
+  { name: "John Doe", age: 22, course: "Computer Science" },
+  { name: "Jane Smith", age: 20, course: "Mathematics" },
+  { name: "Alice Johnson", age: 23, course: "Physics" }
+]);
+
+// READ: Get all students
+db.students.find().pretty();
+
+// READ: Get student by _id (replace ObjectId string with an actual id from your data)
+db.students.find({ _id: ObjectId("REPLACE_WITH_STUDENT_ID") }).pretty();
+
+// UPDATE: Update student by _id
+db.students.updateOne(
+  { _id: ObjectId("REPLACE_WITH_STUDENT_ID") },
+  { $set: { age: 25, course: "Data Science" } }
+);
+
+// DELETE: Delete student by _id
+db.students.deleteOne({ _id: ObjectId("REPLACE_WITH_STUDENT_ID") });
