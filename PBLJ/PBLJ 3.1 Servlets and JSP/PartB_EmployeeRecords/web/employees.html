@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid #888;
+            padding: 10px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employee Records Portal</h2>
+
+    <form action="employees" method="get">
+        <label for="empid">Search Employee by ID:</label>
+        <input type="text" name="empid" id="empid" placeholder="Enter EmpID">
+        <input type="submit" value="Search">
+    </form>
+
+    <form action="employees" method="get">
+        <input type="hidden" name="all" value="true">
+        <input type="submit" value="View All Employees">
+    </form>
+</body>
+</html>
