@@ -1,0 +1,15 @@
+{
+  "name": "jwt-protected-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.4.5",
+    "body-parser": "^1.20.3"
+  }
+}
