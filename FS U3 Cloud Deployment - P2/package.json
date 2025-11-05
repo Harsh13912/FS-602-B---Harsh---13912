@@ -1,0 +1,10 @@
+{
+  "name": "ci-cd-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo 'Running tests...' && exit 0",
+    "build": "echo 'Building project...' && mkdir -p build && echo '<h1>Build Complete</h1>' > build/index.html"
+  },
+  "dependencies": {}
+}
