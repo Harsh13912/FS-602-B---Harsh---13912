@@ -1,0 +1,39 @@
+.app {
+  background: white;
+  width: 420px;
+  margin: 80px auto;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #5b4ca7;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+}
+
+.selected {
+  background: #d1c4e9;
+  color: black;
+}
+
+.history {
+  margin-top: 20px;
+  text-align: left;
+}

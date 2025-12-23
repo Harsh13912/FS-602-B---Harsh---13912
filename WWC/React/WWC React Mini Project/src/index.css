@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #fff;
+}
