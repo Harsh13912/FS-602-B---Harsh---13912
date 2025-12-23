@@ -1,0 +1,5 @@
+body { margin: 0; font-family: Arial; }
+.nav { display: flex; gap: 20px; padding: 10px; background: #131921; color: white; }
+.nav a { color: white; text-decoration: none; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 20px; padding: 20px; }
+.card { border: 1px solid #ddd; padding: 10px; }
